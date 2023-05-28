@@ -18,16 +18,19 @@ public class Main {
                 .addCoffee(new CoffeeWithMilk("Капучино", 200, 75, 80,
                         false, null));
 
+        apparat.setSugarPortion(5);
+        apparat.setSugarPrice(5);
         System.out.println(apparat);
-        Coffee coffee = apparat.saleCoffee("Латте");
-        apparat.withSugar(23);
+        Coffee coffee = apparat.saleCoffee("Латте", 1, 500, 2);
         System.out.println(apparat);
-        Coffee coffee1 = apparat.saleCoffee("Капучино");
-        apparat.withSugar(3);
+        Coffee coffee1 = apparat.saleCoffee("Капучино",2, 1000, 3);
         System.out.println(apparat);
-        Coffee coffee3 = apparat.saleCoffee("Не кофе");
-        apparat.withSugar(0);
+        Coffee coffee3 = apparat.saleCoffee("Не кофе",1, 1, 3);
         System.out.println(apparat);
+        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        System.out.println(apparat.getCash());
+        System.out.println(apparat.getSugarPortion());
+        System.out.println(apparat.getCoffeeMachine());
 
     }
 }
