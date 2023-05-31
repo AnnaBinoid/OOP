@@ -11,7 +11,7 @@ public class Aqarium {
     private Cleaner joe = new Cleaner("Joe", "mop", "Holly trash!");
     private Cleaner bob = new Cleaner("Bob", "broomstick", "Heavy cleaning");
 
-    public Aqarium addAquaResidents(AquaResidents residents){
+    public Aqarium addAquaResidents(AquaResidents residents) {
         aquarium.add(residents);
         return this;
     }
@@ -24,16 +24,16 @@ public class Aqarium {
 
     public String getAquaSound() {
         StringBuilder builder = new StringBuilder();
-        for (AquaSoundAble soundable: getAquaSoundable()) {
+        for (AquaSoundAble soundable : getAquaSoundable()) {
             builder.append(soundable.sound()).append('\n');
         }
         return builder.toString();
     }
 
-    public List<EatingFish> ateFishes(){
+    public List<EatingFish> ateFishes() {
         List<EatingFish> fishEaters = new ArrayList<>();
         for (AquaResidents fishers : aquarium) {
-            if (fishers instanceof EatingFish){
+            if (fishers instanceof EatingFish) {
                 fishEaters.add((EatingFish) fishers);
             }
         }
@@ -44,7 +44,7 @@ public class Aqarium {
     public List<HitingSuperCombo> heroes() {
         List<HitingSuperCombo> superHeroes = new ArrayList<>();
         for (AquaResidents hero : aquarium) {
-            if (hero instanceof HitingSuperCombo){
+            if (hero instanceof HitingSuperCombo) {
                 superHeroes.add((HitingSuperCombo) hero);
             }
         }
@@ -53,26 +53,25 @@ public class Aqarium {
         return superHeroes;
     }
 
-    public HitingSuperCombo getSuperChamp (List<HitingSuperCombo> supers){
+    public HitingSuperCombo getSuperChamp(List<HitingSuperCombo> supers) {
         HitingSuperCombo superSuper = supers.get(0);
         for (HitingSuperCombo isSuper : supers) {
-            if (isSuper.getComboStrength() > superSuper.getComboStrength()){
+            if (isSuper.getComboStrength() > superSuper.getComboStrength()) {
                 superSuper = isSuper;
             }
         }
         return superSuper;
     }
 
-    public EatingFish getMainGuzzler(List<EatingFish> eaters){
+    public EatingFish getMainGuzzler(List<EatingFish> eaters) {
         EatingFish mainEater = eaters.get(0);
         for (EatingFish eater : eaters) {
-            if (eater.eatedFishes() > mainEater.eatedFishes()){
+            if (eater.eatedFishes() > mainEater.eatedFishes()) {
                 mainEater = eater;
             }
         }
         return mainEater;
     }
-
 
     @Override
     public String toString() {
@@ -83,6 +82,4 @@ public class Aqarium {
         }
         return builder.toString();
     }
-
-
 }

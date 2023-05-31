@@ -13,7 +13,6 @@ public class Main {
         Piranha piranha = new Piranha("piranha", "Sweety");
         ClownFish clown = new ClownFish("clownFish", "Nemo");
 
-
         Aqarium aqua = new Aqarium();
         aqua.addAquaResidents(don).addAquaResidents(leo).addAquaResidents(triton)
                 .addAquaResidents(piranha).addAquaResidents(clown);
@@ -24,7 +23,7 @@ public class Main {
 
 
         System.out.println("\n *** Fishguzzlers: *** ");
-        for (EatingFish fishers:aqua.ateFishes()) {
+        for (EatingFish fishers : aqua.ateFishes()) {
             System.out.println(fishers);
         }
 
@@ -33,7 +32,7 @@ public class Main {
         System.out.println(String.format(" He ate %d fishes!", aqua.getMainGuzzler(aqua.ateFishes()).eatedFishes()));
 
         System.out.println("\n *** This are our Heroes: *** ");
-        for (HitingSuperCombo hero : aqua.heroes()){
+        for (HitingSuperCombo hero : aqua.heroes()) {
             System.out.println(hero.hitingSuperCombo());
         }
 
@@ -41,9 +40,6 @@ public class Main {
         System.out.print(aqua.getSuperChamp(aqua.heroes()));
         System.out.println(String.format(" Strength of his combo is: %d."
                 , aqua.getSuperChamp(aqua.heroes()).getComboStrength()));
-
-
-
 
     }
 }

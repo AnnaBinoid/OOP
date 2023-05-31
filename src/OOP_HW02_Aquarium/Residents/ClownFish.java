@@ -8,9 +8,7 @@ public class ClownFish extends HerbivorousFish {
     }
 
     @Override
-    public String sound(){
+    public String sound() {
         return "ClownFish says:\t\t Blop-wa-ha-ha-blop";
     }
-
-
 }

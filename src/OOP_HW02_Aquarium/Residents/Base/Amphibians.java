@@ -9,7 +9,7 @@ public abstract class Amphibians extends AquaResidents {
     }
 
     @Override
-    public String feed(){
+    public String feed() {
         return "- I like to eat something which can move.";
     }
 }

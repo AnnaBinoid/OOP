@@ -10,11 +10,12 @@ public abstract class Fishes extends AquaResidents {
     }
 
     @Override
-    public String feed(){
+    public String feed() {
         return "Fish food.";
     }
+
     @Override
-    public String sound(){
+    public String sound() {
         return "Fish says:\t\t Blop-blop";
     }
 

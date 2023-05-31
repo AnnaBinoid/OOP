@@ -1,6 +1,6 @@
 package OOP_HW02_Aquarium;
 
-public class Cleaner implements HitingSuperCombo, EatingFish{
+public class Cleaner implements HitingSuperCombo, EatingFish {
 
     String cleanerName;
     String cleanerWeapon;
@@ -11,7 +11,6 @@ public class Cleaner implements HitingSuperCombo, EatingFish{
         this.cleanerWeapon = cleanerWeapon;
         this.cleanerSuperPunch = cleanerSuperPunch;
     }
-
 
     @Override
     public String hitingSuperCombo() {

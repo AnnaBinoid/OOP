@@ -21,13 +21,13 @@ public class NinjaTurtle extends Turtle implements HitingSuperCombo {
     }
 
     @Override
-    public String feed(){
+    public String feed() {
         return "- Have you got some PIZZA?";
     }
 
     @Override
     public String toString() {
-       return String.format("%s He is %s belt on and keeps his %s.",super.toString(), beltColor, weapon);
+        return String.format("%s He is %s belt on and keeps his %s.", super.toString(), beltColor, weapon);
     }
 
     @Override
