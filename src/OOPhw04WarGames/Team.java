@@ -1,5 +1,6 @@
 package OOPhw04WarGames;
 
+import OOPhw04WarGames.shields.Shield;
 import OOPhw04WarGames.warriors.Archer;
 import OOPhw04WarGames.warriors.Warrior;
 
@@ -35,6 +36,17 @@ public class Team<T extends Warrior> implements Iterable<T> {
         return teamDamage;
     }
 
+    public int getMinTeamShield(){
+        int minTeamShield = team.get(0).getShield().protect();
+        for (T t: this){
+            int currentProtect = t.getShield().protect();
+            if (minTeamShield < currentProtect){
+                minTeamShield = currentProtect;
+            }
+        }
+        return minTeamShield;
+    }
+
     public int getTeamAttackDistance(){
         int maxTeamAttackDistance = 0;
         for (T t: this){
@@ -57,7 +69,8 @@ public class Team<T extends Warrior> implements Iterable<T> {
         }
         sb.append(String.format("Team damage: %s.\n", getTeamDamage()))
                 .append(String.format("Team distance: %d.\n", getTeamAttackDistance()))
-                .append(String.format("Team health: %d.\n", getTeamHealth()));
+                .append(String.format("Team health: %d.\n", getTeamHealth()))
+                .append(String.format("Team min shield: %d.\n", getMinTeamShield()));
         return sb.toString();
     }
 }

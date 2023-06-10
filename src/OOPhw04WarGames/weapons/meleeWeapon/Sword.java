@@ -4,7 +4,7 @@ public class Sword implements Melee {
 
     @Override
     public int damage() {
-        return 5;
+        return 10;
     }
     @Override
     public String toString() {
