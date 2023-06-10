@@ -2,11 +2,33 @@ package OOPhw03LinkedList;
 
 import java.util.Iterator;
 
-public class OurLinkedList<T> implements Iterable <T> {
+public class OurLinkedList<T> implements Iterable<T> {
+    private Element<T> head;
+    private Element<T> tail;
+    int listSize;
+
+    public OurLinkedList() {
+        this.head = null;
+        this.tail = null;
+        this.listSize = 0;
+    }
+
+    public void add(T data){
+        Element<T> ourElement = new Element<>(data);
+        if ( listSize == 0){
+            head = ourElement;
+        }
+        else {
+            tail.next = ourElement;
+            ourElement.previous = tail;
+        }
+        tail = ourElement;
+        listSize++;
+    }
 
     @Override
     public Iterator<T> iterator() {
-        return new Iterator<>() {
+        return new Iterator<T>() {
             private Element<T> current = head;
 
             @Override
@@ -23,39 +45,19 @@ public class OurLinkedList<T> implements Iterable <T> {
         };
     }
 
-    public class Element<T> {
-        private T value;
-        private Element<T> next;
-        private Element<T> previous;
+
+    public class Element<T>{ //создаем встроенный класс Element с объявленным типом данных
+
+        private T value;            // у него будет значение обявленного типа (то, что мы будем класть)
+        private Element<T> next;        // ссылка на следующий эл-т
+        private Element<T> previous;    // ссылка на предыдущий эл-т
 
         public Element(T value) {
             this.value = value;
             next = null;
             previous = null;
         }
-    }
 
-    Element<T> head;
-    Element<T> tail;
-    int listSize;
-
-    public OurLinkedList () {
-        head = null;
-        tail = null;
-        listSize = 0;
-    }
-
-    public void add(T data){
-        Element<T> ourEl = new Element<>(data);
-        if (listSize == 0){
-            head = ourEl;
-        }
-        else {
-            tail.next = ourEl;
-            ourEl.previous = tail;
-        }
-        tail = ourEl;
-        listSize++;
     }
 
 }
